@@ -6,12 +6,9 @@
  * Time: 12:43 AM
  */
 
-if (!isset($_GET['fileUpload']) || !file_exists($_GET['fileUpload']) || !isset($_GET['select'])) {
-    exit('');
-}
 echo "Students list<br>";
-$file = $_GET['fileUpload'];
-$f = $fopen($file, 'r');
+//$file = $_GET['fileUpload'];
+$f = $fopen($_GET['fileUpload'], 'r');
 $arr;
 for ($i = 0; $string = fgets($f); $i++) {
     $tempArr_ = explode(':', $string);
@@ -25,4 +22,12 @@ if ($_GET['select'] == '1') {
         echo '<i>{$arr[$i][0]}</i>;';
     }
     echo '</p>';
+}
+if ($_GET['select'] == '2') {
+    for ($i = 0; $i < count($arr); $i++)
+        echo "<p><b>{$arr[$i][1]}</b></p>"; // b это жирный шрифт
+}
+if ($_GET['select'] == '3') {
+    for ($i = 0; $i < count($arr); $i++)
+        echo "<p><b>{$arr[$i][1]}</b>:<i>{$arr[$i][0]}</i></p>";
 }
