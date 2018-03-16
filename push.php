@@ -19,13 +19,15 @@ if ($_GET['select'] == '1') {
     sort($arr);
     echo '<p>';
     for ($i = 0; $i < count($arr); $i++) {
-        echo '<i>{$arr[$i][0]}</i>;';
+        echo "<i>{$arr[$i][0]}</i>;";
     }
     echo '</p>';
 }
 if ($_GET['select'] == '2') {
-    for ($i = 0; $i < count($arr); $i++)
-        echo "<p><b>{$arr[$i][1]}</b></p>"; // b это жирный шрифт
+    for ($i = 0; $i < count($arr); $i++){
+        echo "<p><b>{$arr[$i][1]}</b></p>";
+    }
+
 }
 if ($_GET['select'] == '3') {
     for ($i = 0; $i < count($arr); $i++)
